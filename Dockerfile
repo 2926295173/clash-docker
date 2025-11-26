@@ -6,6 +6,9 @@ RUN case $(apk --print-arch) in \
     'x86_64') \
       export __ARCH='amd64-v1'; \
       ;; \
+    'x86_64') \
+      export __ARCH='amd64-v2'; \
+      ;; \
     'aarch64') \
       export __ARCH='arm64'; \
       ;; \
