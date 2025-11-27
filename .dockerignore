@@ -1,0 +1,19 @@
+# Git
+.git
+.gitignore
+README.md
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# GitHub
+.github
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+temp/
