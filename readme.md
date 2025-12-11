@@ -21,8 +21,6 @@ allow-lan: true
 bind-address: '*'
 mode: rule
 log-level: info
-external-controller: '0.0.0.0:9090'
-external-ui: /ui
 dns:
     enable: false
     ipv6: true
