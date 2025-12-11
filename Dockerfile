@@ -18,22 +18,11 @@ RUN case $(apk --print-arch) in \
 
 FROM starudream/alpine-glibc AS builder2
 
-ARG ZASHBOARD_VERSION=2.4.0
-
-RUN wget -qO /tmp/zashboard.zip https://github.com/Zephyruso/zashboard/releases/download/v${ZASHBOARD_VERSION}/dist.zip \
-    && mkdir -p /tmp && unzip /tmp/zashboard.zip -d /tmp
-
-FROM starudream/alpine-glibc
-
 WORKDIR /
 
 COPY --from=builder1 /tmp/geoip.metadb /root/.config/mihomo/geoip.metadb
 COPY --from=builder1 /tmp/mihomo /mihomo
-COPY --from=builder2 /tmp/dist /ui
-
-ENV SAFE_PATHS="/ui"
 
 CMD /mihomo
 # /root/.config/mihomo/config.yaml 内部映射到外面
-# external-ui: /ui
 
