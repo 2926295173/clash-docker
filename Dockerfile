@@ -1,6 +1,6 @@
 FROM starudream/alpine-glibc AS builder1
 
-ARG MIHOMO_VERSION=1.19.16
+ARG MIHOMO_VERSION=1.19.17
 
 RUN case $(apk --print-arch) in \
     'x86_64') \
@@ -23,6 +23,6 @@ WORKDIR /
 COPY --from=builder1 /tmp/geoip.metadb /root/.config/mihomo/geoip.metadb
 COPY --from=builder1 /tmp/mihomo /mihomo
 
-CMD /mihomo
+CMD ["/mihomo"]
 # /root/.config/mihomo/config.yaml 内部映射到外面
 
