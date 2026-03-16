@@ -1,6 +1,6 @@
 FROM starudream/alpine-glibc AS builder1
 
-ARG MIHOMO_VERSION=1.19.17
+ARG MIHOMO_VERSION=1.19.21
 
 RUN case $(apk --print-arch) in \
     'x86_64') \
